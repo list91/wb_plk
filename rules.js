@@ -3,7 +3,7 @@ var Kp = 13;
 var Ki = 20;
 var Kd = 0;
 var dt = 0.05;
-var setpoint = 36.5; // Целевая температура
+var setpoint = 35.0; // Целевая темераа
 
 // Переменные для интеграла и предыдущей ошибки
 var integral = 0;
@@ -34,7 +34,7 @@ function regulateFan(input) {
 
     var dimmingLevel = calculatePower(power*-1);
 
-    log(dimmingLevel + " - " + power*-1);
+    log(dimmingLevel + " - " + power);
     dev["аналогВых/Channel 2 Dimming Level"] = dimmingLevel;
 }
 
@@ -44,13 +44,13 @@ function getCurrentTemperature() {
 }
 
 // Основной цикл работы ПИД-регулятора
-setInterval(function q() {
-    // Получение текущей температуры
-    var currentTemperature = getCurrentTemperature();
+// setInterval(function q() {
+//     // Получение текущей температуры
+//     var currentTemperature = getCurrentTemperature();
 
-    // Регулировка мощности вентилятора
-    regulateFan(currentTemperature);
+//     // Регулировка мощности вентилятора
+//     regulateFan(currentTemperature);
 
-    // Вывод текущей температуры и установленной мощности вентилятора
-    log("Текущая температура:", currentTemperature.toFixed(2));
-}, 1000); // Период опроса и регулировки вентилятора в миллисекундах (1000 мс = 1 сек)
+//     // Вывод текущей температуры и установленной мощности вентилятора
+//     log("Текущая температура:", currentTemperature.toFixed(2));
+// }, 1000); // Период опроса и регулировки вентилятора в миллисекундах (1000 мс = 1 сек)
