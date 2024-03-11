@@ -94,7 +94,6 @@ var arr_d_out_ext = {
     "out4": dev[""],
 }
 
-
 var arr_a_in = {
     "in0": dev[""],
     "in1": dev[""],
@@ -123,39 +122,28 @@ var arr_a_out = {
 }
 
 function init_modules(){
-    var data_modules = [
-        arr_d_in,
-        arr_d_out,
-        arr_d_in_ext,
-        arr_d_out_ext,
-        arr_a_in,
-        arr_a_out
-    ];
-    for (var arrIndex = 0; arrIndex < data_modules.length; arrIndex++){
-       for (var key in data_modules[arrIndex]){
+    var data_modules = {
+       "arr_d_in": arr_d_in,
+       "arr_d_out": arr_d_out,
+       "arr_d_in_ext": arr_d_in_ext,
+       "arr_d_out_ext": arr_d_out_ext,
+       "arr_a_in": arr_a_in,
+       "arr_a_out": arr_a_out
+    };
+    for (var mod_type in data_modules){
+       for (var key in data_modules[mod_type]){
            try {
-                if(data_modules[arrIndex][key]){
-                    //log(dev);
-                    //var q = data_modules[arrIndex][key].toString();
-                    log("[+] - " + key + " -> " + data_modules[arrIndex][key]);
-                } else {
-                    log(data_modules[arrIndex][key])
-                }
+                log("[+] - " + mod_type + " -> " + key + " - " + data_modules[mod_type][key]);
 
            } catch (error) {
+               // TODO тут ставим флаг о невозможности продолжать работу для дальнейшего алерта
                 if (error instanceof TypeError){
-                    log("[-] - " + key);
+                    log("[-] - " + mod_type + " -> " + key);
                 } else {
                     log("[!] - " + error);
                 }
-               
-                //log(dev["system/Reboot"]);
-               //log(error);
            }
        } 
-    }
-    for (var i in dev){
-        //log(i);
     }
 }
 init_modules();
