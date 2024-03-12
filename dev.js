@@ -7,13 +7,13 @@ var arr_d_in = {
     "in5": dev[""],
     "in6": dev[""],
     "in7": dev[""],
-    "in8": dev[""],
+    "in8": dev[""], // темпер корпуса горелки №1
     "in9": dev[""],
     "in10": dev[""],
-    "in11": dev[""],
+    "in11": dev[""], // темпер корпуса горелки №2
     "in12": dev[""],
     "in13": dev[""],
-    "in14": dev[""],
+    "in14": dev[""], // темпер корпуса горелки №3
     "in15": dev[""],
     "in16": dev[""],
     "in17": dev[""]
@@ -121,8 +121,7 @@ var arr_a_out = {
     "out12": dev[""],
 }
 
-function init_modules(){
-    var data_modules = {
+var data_modules = {
        "arr_d_in": arr_d_in,
        "arr_d_out": arr_d_out,
        "arr_d_in_ext": arr_d_in_ext,
@@ -130,6 +129,7 @@ function init_modules(){
        "arr_a_in": arr_a_in,
        "arr_a_out": arr_a_out
     };
+function init_modules(){
     for (var mod_type in data_modules){
        for (var key in data_modules[mod_type]){
            try {
@@ -144,6 +144,24 @@ function init_modules(){
                 }
            }
        } 
+    }
+}
+class Main{
+    run(){
+        this.run_id = setInterval(function main(){
+            init_modules();
+        }, 1000)
+    }
+}
+function send_log(msg){
+    // запись сообщения в файл лога
+}
+
+// обработка неисправностей модуля
+function fault_handling(stop, log_msg){
+    send_log(log_msg);
+    if(stop){
+        // пауза цикла итераций автоматики
     }
 }
 init_modules();
