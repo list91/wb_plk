@@ -1,3 +1,5 @@
+var main_process_id = null;
+log(readConfig("alarms.conf").deviceTitle);
 var arr_d_in = {
     "in0": dev[""],
     "in1": dev[""],
@@ -146,13 +148,6 @@ function init_modules(){
        } 
     }
 }
-class Main{
-    run(){
-        this.run_id = setInterval(function main(){
-            init_modules();
-        }, 1000)
-    }
-}
 function send_log(msg){
     // запись сообщения в файл лога
 }
@@ -164,7 +159,7 @@ function fault_handling(stop, log_msg){
         // пауза цикла итераций автоматики
     }
 }
-init_modules();
+//init_modules();
 function main() {
   // проверка дискретных в
   checkDiscreteInputs();
