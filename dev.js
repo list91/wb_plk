@@ -1,12 +1,16 @@
 var main_process_id = null;
 var isPause = false;
 var pauseMsg = "no message"
+
+
+
 // основной цикл
+
+
 // main_process_id = setInterval(function main() {
 //while (1) {
-  setTimeout(function name(params) {
-    send_log("test");
-  }, 2000)
+//send_log(1221);
+
   // continue;
   // проверил подключеные модули
   // init_modules();
@@ -24,7 +28,18 @@ var pauseMsg = "no message"
 //}  
   
 // }, 2000);
-
+function run_auto(){
+    if(main_process_id){
+        clearInterval(main_process_id);
+    }
+    main_process_id = setInterval(iter_auto_check, 2000);
+}
+function iter_auto_check(){
+    init_modules();
+    if(!isPause){
+        
+    }
+}
 var arr_d_in = {
     "in0": dev[""],
     "in1": dev[""],
@@ -87,7 +102,7 @@ var arr_d_out_ext = {
     "out0": dev[""],
     "out1": dev[""],
     "out2": dev[""],
-    "out3": dev[""],
+    "out2": dev[""],
     "out4": dev[""],
 }
 
