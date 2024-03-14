@@ -1,5 +1,30 @@
 var main_process_id = null;
-log(readConfig("alarms.conf").deviceTitle);
+var isPause = false;
+var pauseMsg = "no message"
+// основной цикл
+// main_process_id = setInterval(function main() {
+//while (1) {
+  setTimeout(function name(params) {
+    send_log("test");
+  }, 2000)
+  // continue;
+  // проверил подключеные модули
+  // init_modules();
+  
+  // if (!isPause){
+    
+  //   // если автоматически режим включен
+  //   if(arr_d_in["in0"]){
+  //       checkDiscreteInputs();
+  //       checkDiscreteOutputs();    
+  //   }
+  // } else {
+  //   warning(pauseMsg)
+  // }
+//}  
+  
+// }, 2000);
+
 var arr_d_in = {
     "in0": dev[""],
     "in1": dev[""],
@@ -135,14 +160,12 @@ function init_modules(){
     for (var mod_type in data_modules){
        for (var key in data_modules[mod_type]){
            try {
-                log("[+] - " + mod_type + " -> " + key + " - " + data_modules[mod_type][key]);
-
+                send_log("[+] - " + mod_type + " -> " + key + " - " + data_modules[mod_type][key]);
            } catch (error) {
-               // TODO тут ставим флаг о невозможности продолжать работу для дальнейшего алерта
                 if (error instanceof TypeError){
-                    log("[-] - " + mod_type + " -> " + key);
+                    fault_handling(true, "[-] - " + mod_type + " -> " + key);
                 } else {
-                    log("[!] - " + error);
+                    fault_handling(true, "[!] - " + error);
                 }
            }
        } 
@@ -150,26 +173,17 @@ function init_modules(){
 }
 function send_log(msg){
     // запись сообщения в файл лога
+    log(msg);
 }
 
 // обработка неисправностей модуля
 function fault_handling(stop, log_msg){
+    isPause = stop
     send_log(log_msg);
-    if(stop){
-        // пауза цикла итераций автоматики
-    }
-}
-//init_modules();
-function main() {
-  // проверка дискретных в
-  checkDiscreteInputs();
-}
-
-function test(){
-    // если автоматически режим включен
-    if(arr_d_in["in0"]){
-        checkDiscreteInputs();
-        checkDiscreteOutputs();    
+    if(isPause){
+      // пауза цикла итераций автоматики
+      // clearInterval(main_process_id)
+      // continue;
     }
 }
 
