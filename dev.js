@@ -333,164 +333,27 @@ var arr_d_out_ext = {
 }
 
 
-// сигналы модуля расширения дискрет вход/выход
-var arr_d_in_ext = {
-    "in0": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in1": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in2": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in3": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in4": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in5": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in6": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in7": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in8": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in9": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in10": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in11": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in12": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in13": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in14": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in15": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in16": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-}
-
-var arr_d_out_ext = {
-    "out0": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "out1": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "out2": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "out3": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "out4": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-}
-
 var arr_a_in = {
     "in0": {
             "mqtt": "",
             "prior": 1,
-            "msg_true": ""
-        }, 
+            "msg_true": "есть связь с датчиком температуры в камере 1"
+        },//  
     "in1": {
             "mqtt": "",
             "prior": 1,
-            "msg_true": ""
+            "msg_true": "есть связь с датчиком температуры в камере 2"
         }, 
     "in2": {
             "mqtt": "",
             "prior": 1,
-            "msg_true": ""
+            "msg_true": "есть связь с датчиком температуры в камере 3"
         }, 
     "in3": {
             "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in4": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in5": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in6": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
-    "in7": {
-            "mqtt": "",
-            "prior": 1,
-            "msg_true": ""
-        }, 
+            "prior": 3,
+            "msg_true": "датчиком температуры в камере (резерв)"
+        } 
 }
 
 var arr_a_out = {
