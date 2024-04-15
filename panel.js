@@ -164,6 +164,7 @@ function createBurnLogic(index) {
   })
   
 }
+
 function OutValciOnBody() {    
     var t_ur = arr.d.out.UnloadingRollers
     var t_ua = arr.d.out.UnloadingAuger
